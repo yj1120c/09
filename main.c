@@ -2,23 +2,29 @@
 #include <stdlib.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
+#define SIZE 5
 
 int main(int argc, char *argv[]) {
 	
 	//array declaration
-	int i;
-	int grade [5];
+	int i, average;
+	int sum;
+	int grade[SIZE];
 	
-	//value input
-	grade[0] = 10;
-	grade[1] = 20;
-	grade[2] = 30;
-	grade[3] = 40;
-	grade[4] = 50;
+	printf("input %i scores\n", SIZE);
 	
-	//print
-	for (i=0;i<5;i++)
-	    printf("student %i's grade : %i\n", i, grade[i]);
+	sum = 0;
+	for (i=0;i<SIZE;i++)
+	{
+		scanf("%d", &grade[i]);
+		sum += grade[i]; 
+	}
+	
+	for(i=0;i<SIZE;i++)
+	    printf("grade[%d] = %d\n", i, grade[i]);
+	
+	average = sum/SIZE;
+	printf("average : %i\n", average);
 	
 	return 0;
 }
